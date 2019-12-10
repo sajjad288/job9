@@ -1,3 +1,38 @@
+//Declarative//
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'building ..'
+                
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+//script//
+node {
+    stage('build') {
+     echo 'building....'   
+    }
+    stage('test') {
+        echo 'building....'
+    }
+    stage('deploy') {
+        echo 'deploying'
+    }
+}
+
 node('master') {
     	stage('SCM Checkout'){
         checkout scm
